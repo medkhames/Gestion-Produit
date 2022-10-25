@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Produit.gui.AchatController">
+    <stylesheets>
+        <URL value="@achat.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="200.0" layoutY="100.0" prefHeight="41.0" prefWidth="667.0" style="-fx-background-color: #B0E0E6;" AnchorPane.bottomAnchor="460.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Text layoutX="314.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Produits">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="LRECH" layoutX="566.0" layoutY="7.0" onKeyPressed="#RechP" prefHeight="25.0" prefWidth="120.0" promptText="Recherhe" />
+         </children>
+      </Pane>
+      <Pane layoutX="-3.0" layoutY="92.0" prefHeight="270.0" prefWidth="250.0" style="-fx-background-color: #4682B4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="700.0" AnchorPane.topAnchor="100.0" />
+      <TableView fx:id="tableProd" layoutX="286.0" layoutY="140.0" onMouseClicked="#tab1" prefHeight="190.0" prefWidth="518.0" style="-fx-border-color: #000000;" AnchorPane.bottomAnchor="270.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="140.0">
+        <columns>
+          <TableColumn fx:id="LNP" prefWidth="150.0" text="Nom Produit" />
+          <TableColumn fx:id="LD" prefWidth="150.0" text="Discription" />
+            <TableColumn fx:id="LC" prefWidth="150.0" text="Catégories" />
+            <TableColumn fx:id="LP" prefWidth="75.0" text="Prix " />
+        </columns>
+      </TableView>
+      <TableView fx:id="table2" layoutX="495.0" layoutY="350.0" onMouseClicked="#tab2" prefHeight="200.0" prefWidth="350.0">
+        <columns>
+          <TableColumn prefWidth="100.0" text="Nom Produit" />
+          <TableColumn prefWidth="100.0" text="Discription " />
+            <TableColumn prefWidth="75.0" text="Prix" />
+            <TableColumn prefWidth="75.0" text="Quantité" />
+        </columns>
+      </TableView>
+      <Button fx:id="btajt" layoutX="248.0" layoutY="330.0" mnemonicParsing="false" onAction="#Ajt" text="Ajouter" />
+      <TextField fx:id="qte" layoutX="210.0" layoutY="384.0" />
+   </children>
+</AnchorPane>

@@ -64,6 +64,8 @@
                      </font>
                   </Label>
                   <TextField fx:id="fxRF" layoutX="10.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
+                  <Button layoutX="348.0" layoutY="178.0" mnemonicParsing="false" onMouseClicked="#LOD" text="Load" />
+                  <TextField fx:id="fxID" layoutX="165.0" layoutY="164.0" />
                </children>
             </Pane>
             <Pane layoutX="640.0" layoutY="55.0" prefHeight="250.0" prefWidth="205.0" style="-fx-background-color: #B0E0E6;">
@@ -89,7 +91,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="btMOD" layoutX="25.0" layoutY="77.5" mnemonicParsing="false" onAction="#modP" onKeyPressed="#UpProd" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #1E90FF;" text="Modifier">
+                  <Button fx:id="btMOD" layoutX="25.0" layoutY="77.5" mnemonicParsing="false" onMouseClicked="#getupdate" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #1E90FF;" text="Modifier">
                      <font>
                         <Font name="Century Gothic Bold" size="14.0" />
                      </font>

@@ -25,8 +25,8 @@ public class MainCnxProd {
         //pcd.ajouterProduit2(p);
        //System.out.println(pcd.afficherProduit());
        //pcd.deleteProduit(2);
-       //Produit P = new Produit (2,"messi" , "ronaldo", "badri", 1530, "medicament");
-       // pcd.modifierProduit(P);       
+       //Produit P = new Produit (27,"messi" , "ronaldo", "badri", 1530, "medicament");
+        //pcd.modifierProduit(P);       
         //System.out.println(pcd.RechercherByNom("rouge"));
         //System.out.println(pcd.RechercherByDiscription("red color"));
         //System.out.println(pcd.RechercherByCategories("medicament"));

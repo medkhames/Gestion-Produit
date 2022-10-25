@@ -28,6 +28,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javax.swing.JOptionPane;
 import prod.entity.Produit;
 import prod.services.ProduitCRUD;
@@ -94,6 +95,8 @@ public class ProduitController implements Initializable {
    // PreparedStatement ps = null;
     @FXML
     private ImageView fxLogo;
+    @FXML
+    private TextField fxID;
     
     
     @Override
@@ -123,7 +126,7 @@ public class ProduitController implements Initializable {
     private void addP(ActionEvent event) {
         
         Produit p = new Produit(
-       /* Integer.parseInt(fxID.getText()),*/
+       /*Integer.parseInt(fxID.getText()),*/
         fxNP.getText(),
         fxDS.getText(),
         fxRF.getText(),
@@ -143,9 +146,6 @@ public class ProduitController implements Initializable {
         pc.ajouterProduit2(p);
     }
 
-    @FXML
-    private void modP(ActionEvent event) {
-    }
     
         
     
@@ -279,12 +279,31 @@ public class ProduitController implements Initializable {
 		// 5. Add sorted (and filtered) data to the table.
 		tableProduit.setItems(sortedData);    
     }
-    
-
 
     @FXML
-    private void UpProd(KeyEvent event) {
+    private void LOD(MouseEvent event) {
+        
+                Produit p =tableProduit.getItems().get(tableProduit.getSelectionModel().getSelectedIndex());
+        fxID.setText(""+p.getId_prod());
+        fxNP.setText(p.getNom_prod());
+        fxDS.setText(p.getDiscription());
+        fxRF.setText(p.getReference());
+        fxPR.setText(""+p.getPrix());
+        fxCT.setValue(p.getCategories());
+      
     }
 
+    @FXML
+    private void getupdate(MouseEvent event) {
+            Produit p = new Produit(Integer.parseInt(fxID.getText()),fxNP.getText(),fxDS.getText(),fxRF.getText(),Integer.parseInt(fxPR.getText()),fxCT.getTypeSelector());
+        try {
+            ProduitCRUD pcr =new ProduitCRUD();
+            pcr.modifierProduit(p);
+            refresh_table();
+            
+        } catch (Exception e) {
+        }
+    }
+    
 
 }
